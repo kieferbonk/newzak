@@ -1,15 +1,10 @@
 'use strict';
 
-angular.module('ngDevstack')
+angular.module('newzak')
 
 .controller('AppCtrl', function ($rootScope, $scope) {
 
-    // handling UI Bootstrap Collapse plugin
-    $scope.isCollapsed = true;
-
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        if (angular.isDefined(toState.data.pageTitle)) {
-            $scope.pageTitle = toState.data.pageTitle + ' | ng-devstack';
-        }
+        $scope.pageTitle = (angular.isDefined(toState.data) && angular.isDefined(toState.data.pageTitle)) ? toState.data.pageTitle + ' | newzak' : 'newzak';
     });
 });

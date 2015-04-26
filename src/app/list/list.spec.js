@@ -7,10 +7,10 @@
  * automatically.
  */
 describe('home module', function () {
-    beforeEach(module('ngDevstack'));
-    beforeEach(module('ngDevstack.about'));
+    beforeEach(module('newzak'));
+    beforeEach(module('newzak.list'));
     beforeEach(inject(function ($rootScope, $controller) {
-        $controller('AboutCtrl', {
+        $controller('ListCtrl', {
             $scope: $rootScope.$new()
         });
     }));

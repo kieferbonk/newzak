@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngDevstack')
+angular.module('newzak')
 
 .config(function ($urlRouterProvider) {
 

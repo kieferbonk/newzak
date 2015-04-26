@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('ngDevstack', [
+angular.module('newzak', [
     'templates.app',
-    'ngDevstack.conf',
-    'ngDevstack.home',
-    'ngDevstack.about',
-    'ui.bootstrap',
-    'ui.router'
+    'newzak.conf',
+    'newzak.list',
+    'ui.router',
+    'ngLodash'
 ]);

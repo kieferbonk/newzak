@@ -1,12 +1,17 @@
 'use strict';
 
-angular.module('ngDevstack.conf', [])
+angular.module('newzak.conf', [])
 
 .constant('conf', {
-    api: {
-        login  : '/api/login',
-        logout : '/api/logout',
-        signup : '/api/signup',
-        expiry : '/api/expiry'
-    }
+    feeds: [
+    	{
+    		'name': 'Pitchfork',
+    		'url': 'http://pitchfork.com/rss/reviews/albums/'
+    	},
+    	{
+    		'name': 'Drowned In Sound',
+    		'url': 'http://drownedinsound.com/feeds/reviews/feed.xml'
+    	}
+    ]
+    
 });
