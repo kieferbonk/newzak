@@ -7,7 +7,7 @@ body {
 }
 
 a {
-	color: black;
+	color: rgb(37, 37, 37);
 	text-decoration: none;
 
 	&:visited {
@@ -52,9 +52,10 @@ a {
 		position: absolute;
 		right: 0;
 		opacity: 0.5;
+		transition: opacity 0.1s ease-in-out;
 
 		&:hover {
-			opacity: 1;
+			opacity: 0.8;
 		}
 	}
 
