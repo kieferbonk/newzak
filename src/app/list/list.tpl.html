@@ -1,9 +1,11 @@
 <section class="list">
 	<ul class="deck">
 		<li ng-repeat="item in list | orderBy: -'item.timestamp'" class="card">
-			<a href="{{item.link}}" class="blink">
+			<a href="{{item.srcLink}}">
 				<img src="" alt="{{item.type}}" class="source__image" />
-				<h2>{{item.title}}</h2>
+			</a>
+			<a href="{{item.link}}" class="blink">
+				<h2 class="card__title">{{item.title}}</h2>
 				<span class="timestamp">{{item.timestamp | date: EEEE}}</span>
 				<span class="timestamp">*{{item.timestamp}}*</span>
 			</a>

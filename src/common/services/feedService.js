@@ -48,6 +48,7 @@ angular.module('newzak.feedServiceModule', [])
 
 			lodash.forEach(list.data.responseData.feed.entries, function (entry) {
 				entry.type = brandSource(list.data.responseData.feed.title);
+				entry.srcLink = list.data.responseData.feed.link;
 				entries.push(entry);
 			})
 		});
