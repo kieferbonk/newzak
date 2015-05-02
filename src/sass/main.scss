@@ -1,3 +1,33 @@
 body {
     padding-top: 20px;
+    background: hotpink;
+}
+
+.deck {
+	-webkit-flex-flow: row wrap;
+    justify-content: space-around;
+	display: flex;
+}
+
+.card {
+	&:hover {
+		opacity: 0.8;
+	}
+
+	background: tomato;
+	box-shadow: 5px 5px gray;
+	width: 30%;
+	list-style: none;
+	margin-bottom: 1em;
+	padding: 1em 0.8em;
+
+	.source__image {
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.blink {
+		display: block;
+	}
 }

@@ -1,12 +1,12 @@
 <section class="list">
-
-    <h2>List</h2>
-    <ul>
-        <li ng-repeat="item in list">
-        	<h2>{{item.title}}</h2>
-
-        	<a href="{{item.link}}">read</a>
-    	</li>
-    </ul>
-
+	<ul class="deck">
+		<li ng-repeat="item in list | orderBy: -'item.timestamp'" class="card">
+			<a href="{{item.link}}" class="blink">
+				<img src="" alt="{{item.type}}" class="source__image" />
+				<h2>{{item.title}}</h2>
+				<span class="timestamp">{{item.timestamp | date: EEEE}}</span>
+				<span class="timestamp">*{{item.timestamp}}*</span>
+			</a>
+		</li>
+	</ul>
 </section>
