@@ -19,16 +19,12 @@ angular.module('newzak.feedServiceModule', [])
 	};
 
 	var brandSource = function (source) {
-		var result;
+		var feeds = conf.feeds,
+			result;
 
-		switch (source) {
-			case 'Drowned In Sound // Feed':
-				result = 'dis';
-				break;
-			case 'Album Reviews - Pitchfork':
-				result = 'pitchfork';
-				break;
-		}
+		lodash.forEach(feeds, function (feed) {
+			if (feed.title === source) { result = feed.slug; }
+		});
 
 		return result;
 	};
