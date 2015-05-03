@@ -2,7 +2,7 @@
 
 angular.module('newzak.feedServiceModule', [])
 
-.factory('feedService', function ($http, $q, conf, lodash) {
+.factory('feedService', function ($http, $q, $sce, conf, lodash) {
 
 	var fetchFeed = function (url) {
 		return $http.jsonp('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=' + url + 
@@ -45,6 +45,7 @@ angular.module('newzak.feedServiceModule', [])
 			lodash.forEach(list.data.responseData.feed.entries, function (entry) {
 				entry.type = brandSource(list.data.responseData.feed.title);
 				entry.srcLink = list.data.responseData.feed.link;
+				entry.content = $sce.trustAsHtml(entry.content);
 				entries.push(entry);
 			})
 		});

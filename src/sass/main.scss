@@ -37,9 +37,27 @@ a {
 		opacity: 0.8;
 	}
 
+	&.dominant {
+
+		&.ng-enter {
+			background: teal;
+		}
+
+		.content {
+			&--snippet {
+				display: none;
+			}
+
+			&--full {
+				display: inline-block;
+			}
+		}
+	}
+
 	display: table;
 	position: relative;
-	transition: opacity 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out,
+			width 0.1s ease-in-out;
 	background: tomato;
 	box-shadow: 5px 5px gray;
 	width: 97%;
@@ -59,13 +77,54 @@ a {
 		}
 	}
 
-	.card__title {
+	&__title {
 		margin: 0 0 0.2em;
+	}
+
+	&__timestamp {
+		font-size: 0.8em;
+		margin-bottom: 1em;
+		display: inline-block;
 	}
 
 	.blink {
 		display: block;
 		padding: 1em 0.8em;
+	}
+
+	.content {
+		font-size: 1em;
+
+		&--full {
+
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.button {
+	&__toggle-card {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background: teal;
+		color: white;
+		padding: 0.1em 0.3em;
+		line-height: 1em;
+		cursor: pointer;
+		transition: opacity 0.1s ease-in-out;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:active {
+			color: red;
+		}
 	}
 }
 
