@@ -38,10 +38,7 @@ a {
 	}
 
 	&.dominant {
-
-		&.ng-enter {
-			background: teal;
-		}
+		align-items: baseline;
 
 		.content {
 			&--snippet {
@@ -87,7 +84,7 @@ a {
 		display: inline-block;
 	}
 
-	.blink {
+	&__inset {
 		display: block;
 		padding: 1em 0.8em;
 	}
@@ -106,17 +103,22 @@ a {
 }
 
 .button {
+	$size: 1.5em;
+
 	&__toggle-card {
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		background: teal;
 		color: white;
-		padding: 0.1em 0.3em;
 		line-height: 1em;
 		cursor: pointer;
 		transition: opacity 0.1s ease-in-out;
 		opacity: 0.8;
+		width: $size;
+		height: $size;
+		text-align: center;
+		line-height: $size;
 
 		&:hover {
 			opacity: 1;

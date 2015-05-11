@@ -45,10 +45,13 @@ angular.module('newzak.feedServiceModule', [])
 			lodash.forEach(list.data.responseData.feed.entries, function (entry) {
 				entry.type = brandSource(list.data.responseData.feed.title);
 				entry.srcLink = list.data.responseData.feed.link;
-				entry.content = $sce.trustAsHtml(entry.content);
+				entry.contentSnippet = $sce.trustAsHtml(entry.contentSnippet);
+				entry.timestamp = generateTimestamp(entry.publishedDate);
 				entries.push(entry);
-			})
+			});
 		});
+
+		entries = lodash.sortBy(entries, 'timestamp').reverse();
 
 		return entries;
 	};
@@ -61,15 +64,15 @@ angular.module('newzak.feedServiceModule', [])
 			entries = combineLists(lists);
 
 			lodash.forEach(entries, function (entry) {
-				entry.timestamp = generateTimestamp(entry.publishedDate);
 				list.push(entry);
 			});
+
 		});
 
 		return list;
 	};
 
-    return {
-       getMasterList: getMasterList 
-    };
+	return {
+	   getMasterList: getMasterList 
+	};
 });

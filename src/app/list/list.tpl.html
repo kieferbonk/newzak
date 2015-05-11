@@ -1,18 +1,16 @@
 <section class="list">
 	<ul class="deck">
-		<li ng-repeat="item in list | orderBy: 'item.timestamp'" class="card" ng-class="{dominant: contentVisible}">
-			<a href="{{item.srcLink}}">
+		<li ng-repeat="item in list" class="card" ng-class="{ dominant: contentVisible }">
+			<a href="{{item.link}}">
 				<img src="http://placehold.it/100x100" alt="{{item.type}}" class="source__image" />
 			</a>
-			<button-toggle-card></button-toggle-card>
-			<a href="{{item.link}}" class="blink">
+			<div class="card__inset">
 				<h2 class="card__title">{{item.title}}</h2>
 				<span class="card__timestamp">{{item.timestamp | date: 'EEE d.M.yyyy'}}</span>
 				<div class="content">
 					<p class="content--snippet">{{item.contentSnippet}}</p>
-					<div class="content--full" ng-if="contentVisible" ng-bind-html="item.content"></div>
 				</div>
-			</a>
+			</div>
 		</li>
 	</ul>
 </section>
